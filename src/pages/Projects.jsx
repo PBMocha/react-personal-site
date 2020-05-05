@@ -26,6 +26,11 @@ class ProjectsPage extends React.Component {
                 gitlink: 'TBA', 
                 description: 'A personal website showcasing my experiences, projects and journey. The website was created using only the javascript react framework and bootstrap.'
             }, 
+            {
+                title: 'Project TBA', 
+                gitlink: 'TBA', 
+                description: 'TBA'
+            }, 
         ];
 
         this.setState({
