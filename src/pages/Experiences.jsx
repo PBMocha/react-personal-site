@@ -20,8 +20,10 @@ class Experience extends React.Component {
         let education = this.getEducation();
         let _experiences = [];
 
-        _experiences.push(education[0]);
-        _experiences.push(education[1]);
+        for (let i=0; i < education.length; i++) {
+            _experiences.push(education[i]);
+        }
+        
         
         this.setState({
             experiences: _experiences

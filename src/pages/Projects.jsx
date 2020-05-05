@@ -19,11 +19,10 @@ class ProjectsPage extends React.Component {
     setProjectList() {
         
         //Add projects to this list
-        const projectList = 
-        [
+        const projectList = [
             {
                 title: 'Personal Site', 
-                gitlink: 'TBA', 
+                gitlink: 'https://github.com/PBMocha/react-personal-site', 
                 description: 'A personal website showcasing my experiences, projects and journey. The website was created using only the javascript react framework and bootstrap.'
             }, 
             {
