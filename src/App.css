@@ -1,0 +1,19 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+
+.p-content {
+    background-color: aquamarine;
+}
+
+.p-projects {
+    background-color: blanchedalmond;
+}
+
+.p-experiences {
+    background-color: antiquewhite;
+}
+
+.p-contacts {
+    background-color: burlywood;
+}
