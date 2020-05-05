@@ -18,12 +18,7 @@ class Experience extends React.Component {
 
     setExperiences() {
         let education = this.getEducation();
-        let _experiences = [];
-
-        for (let i=0; i < education.length; i++) {
-            _experiences.push(education[i]);
-        }
-        
+        let _experiences = this.getEducation().concat(this.getProfessional());
         
         this.setState({
             experiences: _experiences
@@ -61,7 +56,26 @@ class Experience extends React.Component {
     }
 
     getProfessional() {
-        let workList = [];
+        let workList = [
+            {
+                title: 'Bombardier Inc',
+                role: 'Advanced Design Intern',
+                year: 'Sep 2019 - Dec 2019',
+                location: 'Dorval, QC',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper dolor convallis, congue lacus in, malesuada enim.'+
+                'Fusce lobortis metus eu urna semper, vel pharetra ipsum feugiat. Nulla suscipit tortor lectus, tristique blandit nunc mollis vel.' + 
+                'Pellentesque non massa nec urna sodales convallis. Morbi varius ultricies placerat.'
+            },
+            {
+                title: 'Cineplex Scotiabank',
+                role: 'Cast Member',
+                year: '2018-2020',
+                location: 'Montreal, QC',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper dolor convallis, congue lacus in, malesuada enim.'+
+                'Fusce lobortis metus eu urna semper, vel pharetra ipsum feugiat. Nulla suscipit tortor lectus, tristique blandit nunc mollis vel.' + 
+                'Pellentesque non massa nec urna sodales convallis. Morbi varius ultricies placerat.'
+            },
+        ];
 
         return workList;
     }

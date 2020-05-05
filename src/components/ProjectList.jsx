@@ -15,7 +15,7 @@ function ProjectList(props) {
         <div>
         {projects.map((obj) => {
             return (
-            <div class="row">
+            <div class="row justify-content-sm-center">
                 <div class="col-sm-5 p-4 m-2">
                     <h4>{obj.title}</h4>
                     <a href={obj.gitlink}>Github Link</a>
