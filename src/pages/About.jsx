@@ -12,22 +12,22 @@ class About extends React.Component {
     render() {
         return (
                 <div class="container">
-                    <div class="row row-cols-1">
-                        <div class="col-sm m-5 d-flex justify-content-center">
-                            <h2>Joshua Parial-Bolusan</h2>
+                    <div class="jumbotron jumbotron-fluid mt-4 rounded">
+                        <div class="container">
+                            <h1 class="display-4 p-4">Joshua Parial-Bolusan</h1>
+                            <hr></hr>
                         </div>
-                        <hr></hr>
                     </div>
                     
                     <div class="row">
-                        <div class="col-sm p-4 m-2 p-content">
+                        <div class="col-sm p-4 m-3 p-content">
                             <h4>About</h4>
                             <br />
                             <p>
                                 {aboutParagraph}
                             </p>
                         </div>
-                        <div class="col-sm p-4 m-2 p-content">
+                        <div class="col-sm p-4 m-3 p-content">
                             <h4>Specifics</h4>
                             <br />
                             <p>
@@ -37,7 +37,7 @@ class About extends React.Component {
                                 <br />
                                 <b>Hobbies:</b>
                                 <br />
-                                Drumming, Gaming, Computers, Anime and Manga 
+                                Drumming, Gaming, Computers, Anime and Manga
                                 <br />
                                 <b>Location:</b>
                                 <br />

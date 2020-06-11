@@ -9,7 +9,8 @@ class Experience extends React.Component {
             experiences: [],
             skills: [],
         };
-        //this.setExperiences = this.setExperiences.bind(this);
+        this.setExperiences = this.setExperiences.bind(this);
+        this.getEducation = this.getEducation.bind(this);
     }
 
     componentDidMount() {
@@ -18,8 +19,10 @@ class Experience extends React.Component {
 
     setExperiences() {
         let education = this.getEducation();
-        let _experiences = this.getEducation().concat(this.getProfessional());
+        let _experiences = education.concat(this.getProfessional());
         
+        console.log(education);
+
         this.setState({
             experiences: _experiences
         }, () => console.log(this.state));
@@ -82,8 +85,8 @@ class Experience extends React.Component {
 
     render() { 
 
-        const experience_list = this.state.experiences;
-        //console.log(experience_list);
+        //const experience_list = this.state.experiences;
+        console.log(this.state.experiences);
         return (
             <div class="container">
                 <div class="row">
@@ -92,7 +95,7 @@ class Experience extends React.Component {
                     </div>
                     <hr></hr>
                 </div>
-                <ExperienceTable experiences={experience_list}/>
+                <ExperienceTable experiences={this.state.experiences}/>
                 <hr></hr>
 
             </div>);

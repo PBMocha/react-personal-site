@@ -6,12 +6,11 @@ class Contact extends React.Component {
 
     render() { 
         return (
-            <div class="container">
+            <div class="container my-4">
                 <div class="row">
-                        <div class="col-sm m-5 d-flex justify-content-center">
-                        <h2>Contact</h2>
-                        
-                        </div>
+                    <div class="col-sm m-5 d-flex justify-content-center">
+                    <h2>Contact</h2>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm p-4 m-2 p-content">

@@ -29,9 +29,13 @@ const Navigation = () => {
                     </ul>
                 </div>
             </nav>
+            <About />
+            <Projects />
+            <Experiences />
+            <Contact />
         {/* </div> */}
         {/* <div class="container"> */}
-            <Switch>
+            {/* <Switch>
                 
                 <Route path='/projects'>
                     <Projects />
@@ -45,7 +49,7 @@ const Navigation = () => {
                 <Route path='/'>
                     <About />
                 </Route>
-            </Switch>
+            </Switch> */}
         {/* </div> */}
         </Router>
     );

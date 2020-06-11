@@ -12,7 +12,7 @@ function ExperienceTable (props) {
         }
 
         handleExperList(props.experiences);
-    });
+    }, [experiences]);
 
     return (
         <div>
