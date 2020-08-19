@@ -1,34 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ExperienceTable from '../components/ExperienceTable'
 
-class Experience extends React.Component {
+const Experience = ({id}) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            experiences: [],
-            skills: [],
-        };
-        this.setExperiences = this.setExperiences.bind(this);
-        this.getEducation = this.getEducation.bind(this);
-    }
+    const [experiences, setExperiences] = useState([]);
 
-    componentDidMount() {
-        this.setExperiences();
-    }
-
-    setExperiences() {
-        let education = this.getEducation();
-        let _experiences = education.concat(this.getProfessional());
-        
-        console.log(education);
-
-        this.setState({
-            experiences: _experiences
-        }, () => console.log(this.state));
-    }
-
-    getEducation() {
+    const getEducation = () => {
 
         let educList = []
         const university = {
@@ -58,7 +35,7 @@ class Experience extends React.Component {
         
     }
 
-    getProfessional() {
+    const getProfessional = () => {
         let workList = [
             {
                 title: 'Bombardier Inc',
@@ -83,23 +60,30 @@ class Experience extends React.Component {
         return workList;
     }
 
-    render() { 
+    useEffect(() => {
+
+        let experiences = getEducation().concat(getProfessional()); // + getProfessional();
+
+        setExperiences(experiences);
+    }, []);
+
 
         //const experience_list = this.state.experiences;
-        console.log(this.state.experiences);
-        return (
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm m-5 d-flex justify-content-center">
-                    <h2>Experience</h2>
-                    </div>
-                    <hr></hr>
+    console.log('');
+    return (
+        <div id={id} className="container">
+            <div className="row">
+                <div className="col-sm m-5 d-flex justify-content-center">
+                <h2>Experience</h2>
                 </div>
-                <ExperienceTable experiences={this.state.experiences}/>
                 <hr></hr>
+            </div>
+            <ExperienceTable experienceList={experiences}/>
+            <hr></hr>
 
-            </div>);
-    }
+        </div>
+    );
+
 }
  
 export default Experience;

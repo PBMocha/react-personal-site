@@ -1,25 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectList from '../components/ProjectList';
 
-class ProjectsPage extends React.Component {
+const ProjectsPage = ({id}) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            projectList: [],
-        };
-    }
+    const [projects, setProjects] = useState([]);
 
-    componentDidMount() {
-        this.setProjectList();
-    }
-
-    //Used fo adding projects i have done in the past
-    //If more projects are made, change this function
-    setProjectList() {
-        
-        //Add projects to this list
-        const projectList = [
+    useEffect(() => {
+        //use service
+        setProjects([
             {
                 title: 'Personal Site', 
                 gitlink: 'https://github.com/PBMocha/react-personal-site', 
@@ -30,26 +18,21 @@ class ProjectsPage extends React.Component {
                 gitlink: 'TBA', 
                 description: 'TBA'
             }, 
-        ];
+        ]);
+    }, []);
 
-        this.setState({
-            projectList: projectList,
-        }, console.log(this.state));
-    }
-
-    render() { 
-        return (  
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm m-5 d-flex justify-content-center">
-                    <h2>Projects</h2>
-                    </div>
+    return (  
+        <div id={id} className="container">
+            <div className="row">
+                <div className="col-sm m-5 d-flex justify-content-center">
+                <h2>Projects</h2>
                 </div>
-                <hr></hr>
-                <ProjectList projects={this.state.projectList}/>
-                <hr></hr>
-            </div>);
-    }
+            </div>
+            <hr></hr>
+            <ProjectList projects={projects}/>
+            <hr></hr>
+        </div>);
+    
 }
  
 export default ProjectsPage;

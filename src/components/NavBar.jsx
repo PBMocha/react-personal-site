@@ -1,57 +1,39 @@
-import React from 'react';
-import '../App.css';
-import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState} from 'react';
+import { Link, animateScroll as scroll} from 'react-scroll';
 
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Projects from '../pages/Projects';
-import Experiences from '../pages/Experiences';
+import '../App.css';
 
 const Navigation = () => {
+
+    const [scroll, setScroll] = useState(false);
+
+    const handleScroll = () => {
+        
+    }
+
     return (
-        <Router>
+        <div>
         {/* <div class="container"> */}
-            <nav class="navbar navbar-expand-sm navbar-light mw-75 bg-dark">
-                <div class="navbar-collapse" id="navbar">
-                    <ul class="nav m-auto">
-                        <li class="nav-item mr-4 ml-4">
-                            <Link className="nav-link text-light" to='/'>About<span class="sr-only">(current)</span></Link>
+            <nav className="navbar navbar-expand-sm navbar-light mw-75 bg-dark">
+                <div className="navbar-collapse" id="navbar">
+                    <ul className="nav m-auto">
+                        <li className="nav-item mr-4 ml-4">
+                            <a className="nav-link text-light" href='#'>About</a>
                         </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <Link className="nav-link text-light" to='/projects'>Projects<span class="sr-only">(current)</span></Link>
+                        <li className="nav-item mr-4 ml-4">
+                            <Link className="nav-link text-light" activeClass="" to="projects" spy={true} smooth={true} offset={0} duration={1000}>Projects</Link>
                         </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <Link className="nav-link text-light" to='/experiences'>Experiences<span class="sr-only">(current)</span></Link>
+                        <li className="nav-item mr-4 ml-4">
+                            <Link className="nav-link text-light" activeClass="" to="experiences" spy={true} smooth={true} offset={0} duration={1000}>Experience</Link>
                         </li>
-                        <li class="nav-item mr-4 ml-4">
-                            <Link className="nav-link text-light" to='/contact'>Contact<span class="sr-only">(current)</span></Link>
+                        <li className="nav-item mr-4 ml-4">
+                            <Link className="nav-link text-light" activeClass="" to="contact" spy={true} smooth={true} offset={-70} duration={1000}>Contact</Link>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <About />
-            <Projects />
-            <Experiences />
-            <Contact />
-        {/* </div> */}
-        {/* <div class="container"> */}
-            {/* <Switch>
-                
-                <Route path='/projects'>
-                    <Projects />
-                </Route>
-                <Route path='/experiences'>
-                    <Experiences />
-                </Route>
-                <Route path='/contact'>
-                    <Contact />
-                </Route>
-                <Route path='/'>
-                    <About />
-                </Route>
-            </Switch> */}
-        {/* </div> */}
-        </Router>
+            
+      </div>
     );
 };
 
